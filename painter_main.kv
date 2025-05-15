@@ -1,0 +1,27 @@
+<Painter>:
+    canvas.before:
+        Color:
+            rgb: 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+BoxLayout:
+    orientation: 'vertical'
+
+    Painter:
+        id: painter
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        padding: 10
+        spacing: 10
+
+        Button:
+            text: "Clear Canvas"
+            on_press: painter.clear_canvas()
+
+        Button:
+            text: "Save Canvas"
+            on_press: painter.save_image()
